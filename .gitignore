@@ -22,8 +22,4 @@ Thumbs.db
 # Arquivos temporários
 *.tmp
 
-# Arquivos grandes de dados
-data/cgh_aparecida_2025-01-15.csv
-data/df_filtered.csv
-data/model.h5
 
