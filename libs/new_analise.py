@@ -237,30 +237,30 @@ def avaliar_modelo(y_test: np.ndarray, y_pred: np.ndarray) -> dict:
         'MAPE': mape
     }
 
-def mostrar_resultados_modelo(resultado: pd.DataFrame, metricas: dict):
-    """
-    Exibe os resultados e métricas do modelo.
+# def mostrar_resultados_modelo(resultado: pd.DataFrame, metricas: dict):
+#     """
+#     Exibe os resultados e métricas do modelo.
     
-    Args:
-        resultado (pd.DataFrame): DataFrame com as predições
-        metricas (dict): Dicionário com as métricas
-    """
-    # Formatar o DataFrame com 2 casas decimais
-    resultado_formatado = resultado.copy()
-    resultado_formatado['Real'] = resultado_formatado['Real'].round(2)
-    resultado_formatado['Previsto'] = resultado_formatado['Previsto'].round(2)
-    resultado_formatado['Erro (%)'] = resultado_formatado['Erro (%)'].round(2)
+#     Args:
+#         resultado (pd.DataFrame): DataFrame com as predições
+#         metricas (dict): Dicionário com as métricas
+#     """
+#     # Formatar o DataFrame com 2 casas decimais
+#     resultado_formatado = resultado.copy()
+#     resultado_formatado['Real'] = resultado_formatado['Real'].round(2)
+#     resultado_formatado['Previsto'] = resultado_formatado['Previsto'].round(2)
+#     resultado_formatado['Erro (%)'] = resultado_formatado['Erro (%)'].round(2)
     
-    col1, col2 = st.columns(2)
+#     col1, col2 = st.columns(2)
     
-    with col1:
-        st.write("**Primeiras Predições:**")
-        st.dataframe(resultado_formatado.head(10))
+#     with col1:
+#         st.write("**Primeiras Predições:**")
+#         st.dataframe(resultado_formatado.head(10))
     
-    with col2:
-        st.write("**Métricas de Desempenho:**")
-        for nome, valor in metricas.items():
-            st.metric(nome, f"{valor:.2f}")
+#     with col2:
+#         st.write("**Métricas de Desempenho:**")
+#         for nome, valor in metricas.items():
+#             st.metric(nome, f"{valor:.2f}")
 
 def plot_boxplots(df: pd.DataFrame, colunas: list) -> None:
     """

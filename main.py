@@ -10,80 +10,24 @@
     2 passo: Vincular o repositório do github ao servidor da railway. ->OK
     3 passo: Configurar o servidor da railway para rodar o projeto. -> OK
 '''
-from streamlit_extras.metric_cards import style_metric_cards
-import streamlit.components.v1 as components
-from st_on_hover_tabs import on_hover_tabs
-# from libs.componentes import (titulo, ranking_component)
-from libs.funcoes import (get_datas, get_tables, timeit)
-from libs.analise import executor
-import plotly.graph_objects as go
-from dotenv import load_dotenv
-from datetime import datetime
-from libs.database import Database
+
 from libs.new_analise import new_analise
-# from libs.api import gemini
 import streamlit as st
-import pandas as pd
-import numpy as np
-import os
-import re
-import pytz
 
-
-cont = 0
-
-load_dotenv()
-
-@timeit
+# load_dotenv()
 def page_principal():
     ''' Página principal do dashboard que cotém as comparações entre as usinas'''
-    # inserir o título
-    # titulo('CGH Aparecida', 'Página principal')
-    print(' ')
-    # print('                  ## Ranking ##')
-    # ranking_component()
-    # executor()
     new_analise('CGH Aparecida')
         
 
-@timeit
-def page_usinas():
-    """Retrieves key metrics from each usina table."""
-    titulo('Unidades', 'Página de Unidades')
-@timeit
-def page_config():
-    ''' Página de configurações do dashboard '''
-    titulo('Configurações', 'Página de configurações')
-
-@timeit
 def pages():
     ''' Header do dashboard '''
     # carregamento do css
     st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)
 
-    # # criação do header que contém as páginas
-    # with st.sidebar:
 
-    #     # criação do menu
-    #     menu = on_hover_tabs(tabName=['CGH Aparecida','Unidades','Configurações'],
-    #                          iconName=['dashboard','power','settings'], default_choice=0)
-    menu = 'CGH Aparecida'
-    # Página principal
-    if menu == 'CGH Aparecida':
-        # instanciar a página principal
-        page_principal()
+    page_principal()
 
-    # Página de Unidades
-    elif menu == 'Unidades':
-        # instanciar a página de usinas
-        page_usinas()
-
-    # Página de Configurações
-    elif menu == 'Configurações':
-        # instanciar a página de configurações
-        page_config()
-
-@timeit
 def main():
     ''' Dashboard principal '''
     # configuração da página
@@ -142,15 +86,5 @@ def main():
 if __name__ == '__main__':
 
     main()
-
-    # # instanciar a página principal
-    # if not check_password():
-    
-    #     # se a senha estiver errada, para o processamento do app
-    #     st.stop()
-    # else:
-    
-    #     # se a senha estiver correta, executa o app
-    #     main()
 
 
