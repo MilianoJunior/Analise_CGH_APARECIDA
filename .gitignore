@@ -26,5 +26,4 @@ Thumbs.db
 data/cgh_aparecida_2025-01-15.csv
 data/df_filtered.csv
 data/model.h5
-data/df_boxplot.csv
-data/missing_matrix.csv
+
