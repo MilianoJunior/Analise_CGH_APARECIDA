@@ -1,0 +1,30 @@
+# Ambiente virtual
+venv/
+env/
+.env
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de IDE
+.vscode/
+.idea/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.tmp
+
+# Arquivos grandes de dados
+data/cgh_aparecida_2025-01-15.csv
+data/df_filtered.csv
+data/model.h5
+data/df_boxplot.csv
+data/missing_matrix.csv
